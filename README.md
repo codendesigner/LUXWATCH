@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # LUXWATCH - Premium Watch Website
 
 A modern, responsive website for LUXWATCH, a luxury watch brand. This project showcases a beautiful e-commerce website with clean design and excellent user experience.
@@ -97,3 +98,7 @@ The website is easily customizable:
 ---
 
 Created with ❤️ for LUXWATCH - Premium Watches 
+=======
+# LUXWATCH
+premium watch store
+>>>>>>> 4cfedc491399861c869944842d4b9cd529175d39
