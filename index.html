@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUXWATCH - Premium Watches store</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="nav-wrapper">
+          <div class="logo">
+            <img src="Lux Watch Assets/luxwatch-logo.png" alt="Logo" />
+          </div>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li><a href="#home">HOME</a></li>
+              <li><a href="#products">PRODUCTS</a></li>
+              <li class="dropdown">
+                <a href="#pages">PAGES <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#cart">Cart</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#blog">Blog</a></li>
+                  <li><a href="#faq">Faq Page</a></li>
+                  <li><a href="#contact">Contact Us</a></li>
+                </ul>
+              </li>
+              <li><a href="#blog">BLOG</a></li>
+              <li><a href="#about">ABOUT</a></li>
+              <li><a href="#contact">CONTACT</a></li>
+            </ul>
+          </nav>
+          <div class="nav-icons">
+            <a href="#search"><i class="fas fa-search"></i></a>
+            <a href="#account"><i class="fas fa-user"></i></a>
+            <a href="#cart"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#wishlist"><i class="fas fa-heart"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="slider-container">
+          <div class="slider-wrapper">
+            <!-- Slide 1 -->
+            <div class="slide active">
+              <div class="hero-content">
+                <div class="hero-text">
+                  <p class="hero-subtitle">Here To Move Time Forward,</p>
+                  <h2>PERFECTLY<br />COMPATIBLE WITH ALL<br />YOUR DEVICES</h2>
+                  <button class="btn btn-outline">SHOP NOW</button>
+                </div>
+                <div class="hero-image">
+                  <img
+                    src="Lux Watch Assets/slider-bg.png"
+                    alt="Slider Image"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+              <div class="hero-content">
+                <div class="hero-text">
+                  <p class="hero-subtitle">Premium Quality,</p>
+                  <h2>LUXURY<br />WATCHES FOR<br />EVERY OCCASION</h2>
+                  <button class="btn btn-outline">EXPLORE NOW</button>
+                </div>
+                <div class="hero-image">
+                  <img
+                    src="Lux Watch Assets/slider-bg.png"
+                    alt="Slider Image"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+              <div class="hero-content">
+                <div class="hero-text">
+                  <p class="hero-subtitle">Innovation Meets Style,</p>
+                  <h2>SMART<br />FUNCTIONALITY<br />WITH ELEGANCE</h2>
+                  <button class="btn btn-outline">DISCOVER NOW</button>
+                </div>
+                <div class="hero-image">
+                  <img
+                    src="Lux Watch Assets/slider-bg.png"
+                    alt="Slider Image"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider Navigation -->
+          <div class="slider-nav">
+            <div class="nav-dot active" data-slide="0"></div>
+            <div class="nav-dot" data-slide="1"></div>
+            <div class="nav-dot" data-slide="2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+      <div class="container">
+        <div class="featured-grid">
+          <div class="featured-item">
+            <div class="featured-content">
+              <h3>Creative & Modern Design</h3>
+              <p>Timeless Design, Perfect Style</p>
+              <div class="price">
+                <span class="original-price">$50.00</span>
+                <span class="sale-badge">Sale 20%</span>
+              </div>
+            </div>
+            <div class="featured-image">
+              <!-- <div class="watch-placeholder silver-watch"></div> -->
+              <img
+                src="Lux Watch Assets/featured-image-1.png"
+                alt="featured Image"
+              />
+            </div>
+          </div>
+          <div class="featured-item">
+            <div class="featured-content">
+              <h3>Creative & Modern Design</h3>
+              <p>Timeless Design, Perfect Style</p>
+              <div class="price">
+                <span class="original-price">$50.00</span>
+                <span class="sale-badge">Sale 20%</span>
+              </div>
+            </div>
+            <div class="featured-image">
+              <!-- <div class="watch-placeholder silver-watch"></div> -->
+              <img
+                src="Lux Watch Assets/featured-image-2.png"
+                alt="featured Image"
+              />
+            </div>
+          </div>
+          <div class="featured-item">
+            <div class="featured-content">
+              <h3>Creative & Modern Design</h3>
+              <p>Timeless Design, Perfect Style</p>
+              <div class="price">
+                <span class="original-price">$50.00</span>
+                <span class="sale-badge">Sale 20%</span>
+              </div>
+            </div>
+            <div class="featured-image">
+              <!-- <div class="watch-placeholder silver-watch"></div> -->
+              <img
+                src="Lux Watch Assets/featured-image-2.png"
+                alt="featured Image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Premium Components -->
+    <section class="premium-components">
+      <div class="container">
+        <div class="section-header">
+          <h2>Premium Components</h2>
+          <p>Unmatched Quality, Timeless Sophistication</p>
+        </div>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <div class="watch-placeholder blue-watch"></div>
+            </div>
+            <div class="product-content">
+              <h4>Fourterlight Strength</h4>
+              <p>Your Lifestyle, Your Watch</p>
+              <button class="btn btn-secondary">Add To Cart</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <div class="watch-placeholder silver-watch"></div>
+            </div>
+            <div class="product-content">
+              <h4>Lightweight Durability</h4>
+              <p>Your Lifestyle, Your Watch</p>
+              <div class="price">$120.00</div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <div class="watch-placeholder black-watch"></div>
+            </div>
+            <div class="product-content">
+              <h4>Timeless Craft</h4>
+              <p>Your Lifestyle, Your Watch</p>
+              <div class="price">$100.00</div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <div class="watch-placeholder brown-watch"></div>
+            </div>
+            <div class="product-content">
+              <h4>Effortless Style</h4>
+              <p>Your Lifestyle, Your Watch</p>
+              <div class="price">$170.00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Precision Section -->
+    <section class="precision-section">
+      <div class="container">
+        <div class="precision-content">
+          <div class="precision-image">
+            <div class="person-watch">
+              <div class="watch-on-wrist"></div>
+            </div>
+          </div>
+          <div class="precision-text">
+            <span class="small-text">DISCOVER THE ZONATIME DIFFERENCE</span>
+            <h2>
+              ENGINEERED FOR PRECISION, DESIGNED WITH STYLE, SERVED WITH
+              EXCELLENCE.
+            </h2>
+            <div class="metrics">
+              <div class="metric">
+                <div class="metric-label">Customer Satisfaction</div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 97%"></div>
+                </div>
+                <span class="percentage">97%</span>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Timely Deliveries</div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 93%"></div>
+                </div>
+                <span class="percentage">93%</span>
+              </div>
+            </div>
+            <button class="btn btn-primary">LEARN MORE ABOUT US</button>
+          </div>
+        </div>
+        <div class="precision-footer">
+          <p>PRECISION IN EVERY DETAIL</p>
+          <p>A Heritage of Superiority</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeless Edge Collection -->
+    <section class="collection-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>THE TIMELESS EDGE COLLECTION</h2>
+          <p>Watches with a Timeless, Edgy Design</p>
+        </div>
+        <div class="collection-grid">
+          <div class="collection-item">
+            <div class="watch-placeholder black-metal"></div>
+            <h4>A Is Numeral Watch</h4>
+            <div class="price">$18.00</div>
+          </div>
+          <div class="collection-item">
+            <div class="watch-placeholder green-watch"></div>
+            <h4>Black S Red Numeral</h4>
+            <div class="price">$95.00</div>
+          </div>
+          <div class="collection-item">
+            <div class="watch-placeholder green-brown"></div>
+            <h4>Black Dial Leather Strap</h4>
+            <div class="price">$88.00</div>
+          </div>
+          <div class="collection-item">
+            <div class="watch-placeholder white-brown"></div>
+            <h4>Black Dial Numeral</h4>
+            <div class="price">$98.00</div>
+          </div>
+          <div class="collection-item">
+            <div class="watch-placeholder blue-metal"></div>
+            <h4>Black Metal Bracelet Strap</h4>
+            <div class="price">$90.00</div>
+          </div>
+          <div class="collection-item">
+            <div class="watch-placeholder black-leather"></div>
+            <h4>Round Dial Black Automatic</h4>
+            <div class="price">$85.54</div>
+          </div>
+          <div class="collection-item">
+            <div class="watch-placeholder gold-blue"></div>
+            <h4>Black S Yellow Numeral Semi</h4>
+            <div class="price">$85.00</div>
+          </div>
+          <div class="collection-item">
+            <div class="watch-placeholder silver-mesh"></div>
+            <h4>Black Dial Numeral Red Automatic</h4>
+            <div class="price">$22.00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kerrie Watch Section -->
+    <section class="kerrie-section">
+      <div class="container">
+        <div class="kerrie-content">
+          <div class="kerrie-text">
+            <h2>Your Kerrie Watch Today</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <button class="btn btn-primary">BOOK NOW</button>
+          </div>
+          <div class="kerrie-watch">
+            <div class="smartwatch">
+              <div class="smartwatch-face">
+                <div class="smartwatch-time">11:39</div>
+                <div class="smartwatch-icons">
+                  <i class="fab fa-bluetooth"></i>
+                  <i class="fas fa-battery-three-quarters"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Updates -->
+    <section class="latest-updates">
+      <div class="container">
+        <div class="section-header">
+          <h2>LATEST UPDATES</h2>
+          <p>Stay ahead with the latest arrivals in luxury timekeeping</p>
+        </div>
+        <div class="updates-grid">
+          <div class="update-card">
+            <div class="update-image">
+              <div class="person-watch-suit"></div>
+            </div>
+            <div class="update-content">
+              <span class="category">Fashion</span>
+              <h4>ultimate adventure companions: our top watches</h4>
+              <a href="#" class="read-more">READ MORE</a>
+            </div>
+          </div>
+          <div class="update-card">
+            <div class="update-image">
+              <div class="person-watch-blue"></div>
+            </div>
+            <div class="update-content">
+              <span class="category">Fashion</span>
+              <h4>
+                for every adventure: the perfect watch, your ideal companion
+              </h4>
+              <a href="#" class="read-more">READ MORE</a>
+            </div>
+          </div>
+          <div class="update-card">
+            <div class="update-image">
+              <div class="person-watch-white"></div>
+            </div>
+            <div class="update-content">
+              <span class="category">Fashion</span>
+              <h4>adventure-ready watches: your most reliable companions</h4>
+              <a href="#" class="read-more">READ MORE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <div class="footer-logo">
+              <h3>LUXWATCH</h3>
+            </div>
+            <div class="contact-info">
+              <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+              <p><i class="fas fa-envelope"></i> info@luxwatch.com</p>
+              <p><i class="fas fa-globe"></i> www.luxwatch.com</p>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Our Services</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="#mens">Men's Watches</a></li>
+              <li><a href="#collections">Collections</a></li>
+              <li><a href="#womens">Women's Watches</a></li>
+              <li><a href="#collections">Collections</a></li>
+              <li><a href="#new">New Arrivals</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 All rights reserved. Designed for you.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Slider functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".slide");
+        const navDots = document.querySelectorAll(".nav-dot");
+        let currentSlide = 0;
+
+        // Function to show slide
+        function showSlide(index) {
+          // Remove active class from all slides and dots
+          slides.forEach((slide) => slide.classList.remove("active"));
+          navDots.forEach((dot) => dot.classList.remove("active"));
+
+          // Add active class to current slide and dot
+          slides[index].classList.add("active");
+          navDots[index].classList.add("active");
+        }
+
+        // Add click event to navigation dots
+        navDots.forEach((dot, index) => {
+          dot.addEventListener("click", () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+          });
+        });
+
+        // Auto-slide functionality
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % slides.length;
+          showSlide(currentSlide);
+        }
+
+        // Auto-slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Initialize first slide
+        showSlide(0);
+      });
+    </script>
+  </body>
+</html>
