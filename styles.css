@@ -537,74 +537,112 @@ body {
 
 /* Collection Section */
 .collection-section {
-  padding: 80px 0;
+  padding: 60px 0;
   /* background: #f8f9fa; */
 }
 
-.collection-grid {
+.product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 2rem;
 }
 
-.collection-item {
-  background: #f6f6f6;
-  border-radius: 12px;
-  padding: 2rem;
-  text-align: center;
-  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+/* Responsive grid adjustments */
+@media (min-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Styling for each product card */
+.product-card {
+  background-color: #ffffff; /* Equivalent to bg-white */
+  border-radius: 0.75rem; /* Equivalent to rounded-xl */
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* Equivalent to shadow-lg */
+  overflow: hidden;
+  position: relative;
   transition: transform 0.3s ease;
 }
 
-.collection-item:hover {
+.product-card:hover {
   transform: translateY(-5px);
 }
 
-.collection-item h4 {
-  font-size: 1.1rem;
+/* Image styling */
+/* .product-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+} */
+
+/* Icons container and hover effect */
+.product-icons {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.product-card:hover .product-icons {
+  opacity: 1;
+}
+
+/* Individual icon buttons */
+.product-icons button {
+  padding: 0.75rem;
+  background-color: #ffffff;
+  color: #4b5563; /* Equivalent to text-gray-800 */
+  border-radius: 9999px; /* Equivalent to rounded-full */
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-icons button:hover {
+  background-color: #e5e7eb; /* Equivalent to hover:bg-gray-200 */
+}
+
+/* SVG icon styling */
+.product-icons button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Product details section */
+.product-details {
+  padding: 1.25rem;
+  text-align: left;
+}
+.relative-image {
+  background: #dfdfdf;
+}
+.relative-image img {
+  display: block;
+  width: 250px;
+  margin: auto;
+}
+/* .product-details h3 {
+  color: #111827; 
   font-weight: 600;
-  margin: 1rem 0 0.5rem;
-  color: #333;
-}
+  font-size: 1.125rem; 
+  margin: 0;
+} */
 
-.collection-item .price {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #d4af37;
-}
-
-/* Watch Placeholder Variations */
-.black-metal {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-}
-
-.green-watch {
-  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
-}
-
-.green-brown {
-  background: linear-gradient(135deg, #8b4513 0%, #27ae60 100%);
-}
-
-.white-brown {
-  background: linear-gradient(135deg, #fff 0%, #8b4513 100%);
-}
-
-.blue-metal {
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-}
-
-.black-leather {
-  background: linear-gradient(135deg, #2c3e50 0%, #8b4513 100%);
-}
-
-.gold-blue {
-  background: linear-gradient(135deg, #f39c12 0%, #3498db 100%);
-}
-
-.silver-mesh {
-  background: linear-gradient(135deg, #c0c0c0 0%, #95a5a6 100%);
-}
+/* .product-details p {
+  color: #6b7280; 
+  margin-top: 0.25rem;
+  font-size: 1rem;
+} */
 
 /* Kerrie Section */
 .kerrie-section {
