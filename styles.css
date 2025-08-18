@@ -583,7 +583,7 @@ body {
 /* Icons container and hover effect */
 .product-icons {
   position: absolute;
-  bottom: 1rem;
+  bottom: 100px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -598,10 +598,10 @@ body {
 
 /* Individual icon buttons */
 .product-icons button {
-  padding: 0.75rem;
-  background-color: #ffffff;
-  color: #4b5563; /* Equivalent to text-gray-800 */
-  border-radius: 9999px; /* Equivalent to rounded-full */
+  padding: 0.5px;
+  background-color: #dddddd;
+  fill: #988a6b;
+
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.06);
   border: none;
   cursor: pointer;
@@ -609,7 +609,8 @@ body {
 }
 
 .product-icons button:hover {
-  background-color: #e5e7eb; /* Equivalent to hover:bg-gray-200 */
+  background-color: #988a6b;
+  fill: #fff !important;
 }
 
 /* SVG icon styling */
@@ -628,8 +629,9 @@ body {
 }
 .relative-image img {
   display: block;
-  width: 250px;
+  width: 150px;
   margin: auto;
+  padding: 30px 0px;
 }
 /* .product-details h3 {
   color: #111827; 
@@ -645,12 +647,20 @@ body {
 } */
 
 /* Kerrie Section */
-.kerrie-section {
+.kerrie-section .container {
   padding: 80px 0;
-  background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+  background-image: url(lux-watch-assets/banner-image.jpg);
+  background-size: cover;
+}
+.kerrie-text {
   color: #fff;
+  padding-left: 30px;
 }
 
+.kerrie-content button {
+  color: #fff;
+  background: #988a6b;
+}
 .kerrie-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -728,11 +738,11 @@ body {
   transform: translateY(-5px);
 }
 
-.update-image {
+/* .update-image {
   height: 200px;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   position: relative;
-}
+} */
 
 .person-watch-suit {
   width: 150px;
@@ -745,7 +755,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.person-watch-blue {
+/* .person-watch-blue {
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -754,9 +764,9 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
-.person-watch-white {
+/* .person-watch-white {
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -765,7 +775,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 .update-content {
   padding: 2rem;
