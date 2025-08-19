@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watches Collection</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+        Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: #111827;
+      background: #fafafa;
+    }
+
+    .collection-page {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 24px;
+      padding: 24px;
+    }
+
+    .sidebar {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      padding: 16px;
+      position: sticky;
+      top: 16px;
+      height: fit-content;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+    }
+
+    .filter-section {
+      margin-top: 18px;
+    }
+
+    .filter-section h4 {
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .price-range .numbers {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .price-range input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+    }
+
+    .price-range button {
+      padding: 8px 12px;
+      border: 1px solid #e5e7eb;
+      background: #111827;
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .content {
+      min-width: 0;
+    }
+
+    .toolbar {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .toolbar .right label {
+      margin-left: 12px;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .view-btn {
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      border-radius: 8px;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+
+    .view-btn.active {
+      background: #111827;
+      color: #fff;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px;
+      transition: box-shadow 0.2s;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .product-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 16px;
+    }
+
+    .product-info {
+      text-align: center;
+    }
+
+    .product-info h3 {
+      font-size: 1.1rem;
+      margin: 0 0 8px 0;
+      font-weight: 500;
+    }
+
+    .price {
+      color: #b48b57;
+      font-weight: bold;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    /* List view */
+    .list-view .product-grid {
+      display: block;
+    }
+
+    .list-view .product-card {
+      display: grid;
+      grid-template-columns: 120px 1fr 120px;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .list-view .product-info {
+      text-align: left;
+    }
+
+    .pagination {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .pagination button {
+      padding: 8px 12px;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .pagination button.active {
+      background: #111827;
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .collection-page {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+    }
+  </style>
+
+  <body>
+    <div class="collection-page">
+      <aside class="sidebar">
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+          />
+        </div>
+
+        <div class="filter-section">
+          <h4>Categories</h4>
+          <div id="categoryFilters" class="checkbox-group"></div>
+        </div>
+
+        <div class="filter-section">
+          <h4>Brand</h4>
+          <div id="brandFilters" class="checkbox-group"></div>
+        </div>
+
+        <div class="filter-section">
+          <h4>Filter by Price</h4>
+          <div class="price-range">
+            <div class="numbers">
+              <input
+                type="number"
+                id="minPrice"
+                min="0"
+                step="0.01"
+                placeholder="Min"
+              />
+              <span>—</span>
+              <input
+                type="number"
+                id="maxPrice"
+                min="0"
+                step="0.01"
+                placeholder="Max"
+              />
+            </div>
+            <button id="applyPrice">Apply</button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="content">
+        <div class="toolbar">
+          <div class="left">
+            <span id="resultCount">0 items</span>
+          </div>
+          <div class="right">
+            <label>
+              View:
+              <button
+                id="gridBtn"
+                class="view-btn active"
+                aria-label="Grid view"
+              >
+                ▦
+              </button>
+              <button id="listBtn" class="view-btn" aria-label="List view">
+                ≡
+              </button>
+            </label>
+            <label>
+              Sort by:
+              <select id="sortSelect">
+                <option value="default">Featured</option>
+                <option value="priceAsc">Price: Low to High</option>
+                <option value="priceDesc">Price: High to Low</option>
+                <option value="nameAsc">Name: A to Z</option>
+                <option value="nameDesc">Name: Z to A</option>
+              </select>
+            </label>
+            <label>
+              Per page:
+              <select id="perPage">
+                <option value="4">4</option>
+                <option value="6" selected>6</option>
+                <option value="9">9</option>
+                <option value="12">12</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div id="productGrid" class="product-grid"></div>
+
+        <nav id="pagination" class="pagination"></nav>
+      </main>
+    </div>
+
+    <script>
+      // Product dataset
+      const PRODUCTS = [
+        {
+          id: 1,
+          name: "3 In Numeral Watch",
+          price: 15.0,
+          brand: "ElarTime",
+          category: "Top Picks",
+          image: "watch1.png",
+        },
+        {
+          id: 2,
+          name: "Black & Red Numeral",
+          price: 35.0,
+          brand: "Kronos",
+          category: "Most Popular",
+          image: "watch2.png",
+        },
+        {
+          id: 3,
+          name: "Black Dial Leather Strap",
+          price: 35.0,
+          brand: "Eclipse",
+          category: "Hot Items",
+          image: "watch3.png",
+        },
+        {
+          id: 4,
+          name: "Black Dial Numeral",
+          price: 25.0,
+          brand: "ElarTime",
+          category: "Customer Favorites",
+          image: "watch4.png",
+        },
+        {
+          id: 5,
+          name: "Black Metal Bracelet Strap",
+          price: 20.0,
+          brand: "Eclaire",
+          category: "Curated Gifts",
+          image: "watch5.png",
+        },
+        {
+          id: 6,
+          name: "Round Dial Black Automatic",
+          price: 13.54,
+          brand: "ElarTime",
+          category: "The Gift Edit",
+          image: "watch6.png",
+        },
+        {
+          id: 7,
+          name: "Black & Yellow Numeral Semi",
+          price: 8.65,
+          brand: "Kairo",
+          category: "Most Popular",
+          image: "watch7.png",
+        },
+        {
+          id: 8,
+          name: "Black Dial Numeral Red Automatic",
+          price: 22.0,
+          brand: "Eclipse",
+          category: "Hot Items",
+          image: "watch8.png",
+        },
+      ];
+
+      // State
+      const state = {
+        search: "",
+        categories: new Set(),
+        brands: new Set(),
+        minPrice: null,
+        maxPrice: null,
+        sort: "default",
+        view: "grid",
+        page: 1,
+        perPage: 6,
+      };
+
+      // Elements
+      const gridEl = document.getElementById("productGrid");
+      const paginationEl = document.getElementById("pagination");
+      const resultCountEl = document.getElementById("resultCount");
+      const searchInput = document.getElementById("searchInput");
+      const categoryFiltersEl = document.getElementById("categoryFilters");
+      const brandFiltersEl = document.getElementById("brandFilters");
+      const minPriceEl = document.getElementById("minPrice");
+      const maxPriceEl = document.getElementById("maxPrice");
+      const applyPriceBtn = document.getElementById("applyPrice");
+      const sortSelect = document.getElementById("sortSelect");
+      const perPageSelect = document.getElementById("perPage");
+      const gridBtn = document.getElementById("gridBtn");
+      const listBtn = document.getElementById("listBtn");
+
+      // Initialize filters (brands/categories)
+      function initializeFacetFilters() {
+        const categories = Array.from(
+          new Set(PRODUCTS.map((p) => p.category))
+        ).sort();
+        const brands = Array.from(new Set(PRODUCTS.map((p) => p.brand))).sort();
+
+        categoryFiltersEl.innerHTML = categories
+          .map(
+            (c) =>
+              `<label><input type="checkbox" value="${c}" class="category-filter"> <span>${c}</span></label>`
+          )
+          .join("");
+        brandFiltersEl.innerHTML = brands
+          .map(
+            (b) =>
+              `<label><input type="checkbox" value="${b}" class="brand-filter"> <span>${b}</span></label>`
+          )
+          .join("");
+
+        categoryFiltersEl.addEventListener("change", (e) => {
+          if (e.target && e.target.matches("input.category-filter")) {
+            if (e.target.checked) state.categories.add(e.target.value);
+            else state.categories.delete(e.target.value);
+            state.page = 1;
+            render();
+          }
+        });
+        brandFiltersEl.addEventListener("change", (e) => {
+          if (e.target && e.target.matches("input.brand-filter")) {
+            if (e.target.checked) state.brands.add(e.target.value);
+            else state.brands.delete(e.target.value);
+            state.page = 1;
+            render();
+          }
+        });
+      }
+
+      // Helpers
+      function normalize(str) {
+        return String(str).toLowerCase().trim();
+      }
+
+      function applyFilters(products) {
+        const term = normalize(state.search);
+        const hasCategoryFilter = state.categories.size > 0;
+        const hasBrandFilter = state.brands.size > 0;
+        return products.filter((p) => {
+          if (term && !normalize(p.name).includes(term)) return false;
+          if (hasCategoryFilter && !state.categories.has(p.category))
+            return false;
+          if (hasBrandFilter && !state.brands.has(p.brand)) return false;
+          if (state.minPrice != null && p.price < state.minPrice) return false;
+          if (state.maxPrice != null && p.price > state.maxPrice) return false;
+          return true;
+        });
+      }
+
+      function applySort(products) {
+        const list = [...products];
+        switch (state.sort) {
+          case "priceAsc":
+            list.sort((a, b) => a.price - b.price);
+            break;
+          case "priceDesc":
+            list.sort((a, b) => b.price - a.price);
+            break;
+          case "nameAsc":
+            list.sort((a, b) => a.name.localeCompare(b.name));
+            break;
+          case "nameDesc":
+            list.sort((a, b) => b.name.localeCompare(a.name));
+            break;
+          default:
+            break;
+        }
+        return list;
+      }
+
+      function paginate(products) {
+        const start = (state.page - 1) * state.perPage;
+        const end = start + state.perPage;
+        return products.slice(start, end);
+      }
+
+      // Rendering
+      function renderProducts(products) {
+        if (state.view === "grid") {
+          document.body.classList.remove("list-view");
+        } else {
+          document.body.classList.add("list-view");
+        }
+
+        gridEl.innerHTML = products
+          .map(
+            (p) => `
+      <div class="product-card">
+        <img src="${p.image}" alt="${p.name}">
+        <div class="product-info">
+          <h3>${p.name}</h3>
+          <p class="price">$${p.price.toFixed(2)}</p>
+        </div>
+      </div>`
+          )
+          .join("");
+      }
+
+      function renderPagination(total) {
+        const totalPages = Math.max(1, Math.ceil(total / state.perPage));
+        if (state.page > totalPages) state.page = totalPages;
+
+        const buttons = [];
+        const createBtn = (label, page, disabled = false, active = false) => {
+          return `<button ${
+            disabled ? "disabled" : ""
+          } data-page="${page}" class="${
+            active ? "active" : ""
+          }">${label}</button>`;
+        };
+
+        buttons.push(
+          createBtn("Prev", Math.max(1, state.page - 1), state.page === 1)
+        );
+        for (let i = 1; i <= totalPages; i += 1) {
+          buttons.push(createBtn(String(i), i, false, i === state.page));
+        }
+        buttons.push(
+          createBtn(
+            "Next",
+            Math.min(totalPages, state.page + 1),
+            state.page === totalPages
+          )
+        );
+
+        paginationEl.innerHTML = buttons.join("");
+      }
+
+      function render() {
+        state.perPage = Number(perPageSelect.value);
+        const filtered = applyFilters(PRODUCTS);
+        const sorted = applySort(filtered);
+        const pageItems = paginate(sorted);
+        resultCountEl.textContent = `${filtered.length} items`;
+        renderProducts(pageItems);
+        renderPagination(filtered.length);
+      }
+
+      // Event wiring
+      searchInput.addEventListener("input", (e) => {
+        state.search = e.target.value;
+        state.page = 1;
+        render();
+      });
+
+      applyPriceBtn.addEventListener("click", () => {
+        const min = minPriceEl.value !== "" ? Number(minPriceEl.value) : null;
+        const max = maxPriceEl.value !== "" ? Number(maxPriceEl.value) : null;
+        state.minPrice = Number.isFinite(min) ? min : null;
+        state.maxPrice = Number.isFinite(max) ? max : null;
+        state.page = 1;
+        render();
+      });
+
+      sortSelect.addEventListener("change", () => {
+        state.sort = sortSelect.value;
+        state.page = 1;
+        render();
+      });
+
+      perPageSelect.addEventListener("change", () => {
+        state.page = 1;
+        render();
+      });
+
+      gridBtn.addEventListener("click", () => {
+        state.view = "grid";
+        gridBtn.classList.add("active");
+        listBtn.classList.remove("active");
+        render();
+      });
+
+      listBtn.addEventListener("click", () => {
+        state.view = "list";
+        listBtn.classList.add("active");
+        gridBtn.classList.remove("active");
+        render();
+      });
+
+      paginationEl.addEventListener("click", (e) => {
+        const btn = e.target.closest("button[data-page]");
+        if (!btn) return;
+        const next = Number(btn.getAttribute("data-page"));
+        if (Number.isFinite(next)) {
+          state.page = next;
+          render();
+        }
+      });
+
+      // Boot
+      initializeFacetFilters();
+      render();
+    </script>
+  </body>
+</html>
