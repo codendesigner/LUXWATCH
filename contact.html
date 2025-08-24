@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>contact</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .container-full-width {
+        width: 100%;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      /* Contact Header Section */
+      .contact-header {
+        text-align: center;
+      }
+
+      .contact-header .contact-title {
+        margin-bottom: 20px;
+      }
+
+      .contact-header .contact-title p:first-child {
+        font-size: 2em;
+        font-weight: 300;
+        margin-bottom: 0;
+      }
+
+      .contact-header .contact-title p:last-child {
+        font-size: 0.9em;
+        color: #777;
+      }
+
+      /* Contact Form Section */
+      .contact-form-section .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .contact-form-section .form-image img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 5px;
+      }
+
+      .contact-form-section .form-content {
+        flex: 1;
+      }
+
+      .contact-form-section h2 {
+        font-weight: 300;
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+
+      .contact-form-section form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .contact-form-section .form-row {
+        display: flex;
+        gap: 20px;
+      }
+
+      .contact-form-section input,
+      .contact-form-section textarea {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        font-size: 1em;
+        border-radius: 5px;
+      }
+
+      .contact-form-section textarea {
+        resize: vertical;
+        height: 150px;
+      }
+
+      .contact-form-section button {
+        background-color: #a08c73;
+        color: #fff;
+        border: none;
+        padding: 15px 30px;
+        cursor: pointer;
+        align-self: flex-start;
+        font-size: 1em;
+        border-radius: 5px;
+      }
+
+      /* Map Section */
+      .map-section {
+        padding: 0;
+      }
+
+      .world-map-image {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Contact Info Section */
+      .contact-info .container {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .contact-info .info-item {
+        flex: 1;
+      }
+
+      .contact-info h3 {
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .contact-info p {
+        margin: 5px 0;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="contact-header">
+      <div class="container">
+        <div class="contact-title">
+          <p>Contact Us</p>
+          <p>Home / Contact Us</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-form-section">
+      <div class="container">
+        <div class="form-image">
+          <img
+            src="lux-watch-assets/contact-1.png"
+            alt="Man wearing a watch"
+          />
+        </div>
+        <div class="form-content">
+          <h2>GET A QUOTE FOR YOUR PROJECT</h2>
+          <form action="#" method="post">
+            <div class="form-row">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name *"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email *"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <textarea
+                name="enquiry"
+                placeholder="Enquiry *"
+                required
+              ></textarea>
+            </div>
+            <button type="submit">SEND EMAIL</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-section">
+      <div class="container-full-width">
+        <img
+          src="lux-watch-assets/Map.png"
+          alt="World map"
+          class="world-map-image"
+        />
+      </div>
+    </section>
+
+    <section class="contact-info">
+      <div class="container">
+        <div class="info-item">
+          <h3>TALK TO US</h3>
+          <p>Toll Free +0 (123) 000-0000</p>
+          <p>Fax:1234.000.000</p>
+        </div>
+        <div class="info-item">
+          <h3>MAIL US @</h3>
+          <p>admin@luxwatch.com</p>
+          <p>support@luxwatch.com</p>
+        </div>
+        <div class="info-item">
+          <h3>OUR LOCATION</h3>
+          <p>123, David Blake Road,</p>
+          <p>LA (City), 10000, USA</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
