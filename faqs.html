@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>FAQs</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .faqs-section {
+        padding: 60px 0;
+        /* background-color: #f8f8f8; */
+      }
+
+      /* Header Section */
+      .faq-header {
+        padding: 180px 0 60px;
+      }
+      .faq-header {
+        text-align: center;
+        background-color: #f5f5f5;
+      }
+
+      .faq-header h1 {
+        font-size: 3em;
+        font-weight: 300;
+        margin: 10px 0;
+      }
+      .faq-header p {
+        color: #44444477;
+      }
+
+      .faq-header p span {
+        color: #000;
+        font-weight: bold;
+      }
+
+      .faqs-header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      /* Intro Text */
+      .intro-text {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .intro-text h3 {
+        font-size: 1.5em;
+        font-weight: 300;
+        margin-bottom: 10px;
+      }
+
+      .intro-text p {
+        color: #555;
+        line-height: 1.6;
+      }
+
+      /* Accordion Styling */
+      .accordion {
+        width: 100%;
+      }
+
+      .accordion-item {
+        background-color: #a08c73;
+        color: #fff;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        cursor: pointer;
+      }
+
+      .accordion-title p {
+        margin: 0;
+        font-weight: 600;
+      }
+
+      .accordion-title .icon {
+        transition: transform 0.3s ease;
+      }
+
+      .accordion-item.active .accordion-title .icon {
+        transform: rotate(180deg);
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+        background-color: #f2f2f2;
+        color: #333;
+      }
+
+      .accordion-item.active .accordion-content {
+        max-height: 500px; /* A large value to ensure it can expand */
+        padding: 20px;
+      }
+
+      .accordion-content p {
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      /* Small adjustments for hover effect on title */
+      .accordion-title:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="nav-wrapper">
+          <div class="logo">
+            <img src="lux-watch-assets/luxwatch-logo.png" alt="Logo" />
+          </div>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="collection.html">PRODUCTS</a></li>
+              <li class="dropdown">
+                <a href="#pages">PAGES <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#cart">Cart</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="#blog">Blog</a></li>
+                  <li><a href="faqs.html">Faq Page</a></li>
+                  <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+              </li>
+              <li><a href="#blog">BLOG</a></li>
+              <li><a href="about.html">ABOUT</a></li>
+              <li><a href="contact-us.html">CONTACT</a></li>
+            </ul>
+          </nav>
+          <div class="nav-icons">
+            <a href="#search"><i class="fas fa-search"></i></a>
+            <a href="#account"><i class="fas fa-user"></i></a>
+            <a href="#cart"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#wishlist"><i class="fas fa-heart"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="faq-header">
+      <div class="container">
+        <div class="faq-title">
+          <h1>FAQ's</h1>
+          <p>Home /<span>FAQ's</span></p>
+        </div>
+      </div>
+    </section>
+    <section class="faqs-section">
+      <div class="container">
+        <div class="faqs-header">
+          <h2>Got Questions? We've Got Answers.</h2>
+          <p>A Lot More Questions</p>
+        </div>
+
+        <div class="intro-text">
+          <h3>
+            Since smartphones provide the time, what purpose does a watch serve?
+          </h3>
+          <p>
+            In an era dominated by smartphones, the purpose of a watch has
+            evolved beyond mere functionality. It stands as a classic adornment,
+            enhancing one's persona with a touch of grace and gravitas.
+            Crucially, it offers a distraction-free way to check the time
+            instantly, allowing for uninterrupted engagement, unlike the
+            constant stimuli from a phone.
+          </p>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-title">
+              <p>Which watch styles are best suited for daily use?</p>
+              <span class="icon">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+              <p>
+                For daily use, a versatile and durable watch is ideal. Popular
+                choices include field watches, which are simple and robust, or a
+                classic diver's watch, which is highly water-resistant and
+                rugged. A pilot's watch also works well with its clear,
+                easy-to-read dial. The best choice often depends on your
+                personal style and daily activities.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-title">
+              <p>
+                For everyday situations, what kind of watch do you recommend?
+              </p>
+              <span class="icon">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+              <p>
+                A watch with a good blend of style and practicality is
+                recommended for everyday wear. Look for watches with
+                scratch-resistant sapphire crystal glass and a reliable
+                automatic or quartz movement. A metal bracelet or a comfortable
+                leather strap adds to the versatility, allowing the watch to be
+                dressed up or down for different occasions.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-title">
+              <p>
+                What should I look for in a watch if I plan to wear it
+                regularly?
+              </p>
+              <span class="icon">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+              <p>
+                When choosing a watch for regular wear, consider durability,
+                legibility, and comfort. A watch with a stainless steel case and
+                a solid bracelet will withstand daily bumps. Ensure the dial is
+                easy to read at a glance, and that the case size fits your wrist
+                comfortably to prevent discomfort over long periods of wear.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-title">
+              <p>
+                What are some practical watch choices for someone needing a
+                daily timepiece?
+              </p>
+              <span class="icon">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+              <p>
+                Some practical choices include a Seiko 5 for its value and
+                reliability, a Citizen Eco-Drive for its solar-powered
+                convenience, or a Hamilton Khaki Field for its heritage and
+                ruggedness. These watches offer excellent build quality and
+                reliable movements without a high price tag, making them perfect
+                for daily use.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-title">
+              <p>
+                If I want a versatile watch for everyday wear, what features or
+                types should I consider?
+              </p>
+              <span class="icon">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+              <p>
+                For a versatile watch, look for a classic design that can be
+                worn in both casual and formal settings. A watch with a
+                neutral-colored dial (black, white, or silver) and a simple,
+                clean design is highly versatile. A good water resistance rating
+                (at least 50m) is also a practical feature for daily activities.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-title">
+              <p>
+                Can watches appreciate in value, making them a worthwhile
+                investment?
+              </p>
+              <span class="icon">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+              <p>
+                Yes, certain watches from prestigious brands with limited
+                production runs can appreciate in value over time. Factors like
+                brand reputation, rarity, condition, and market demand play a
+                significant role. Brands like Rolex, Patek Philippe, and
+                Audemars Piguet are often known for their investment potential,
+                especially for certain models.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-title">
+              <p>
+                From a financial perspective, is buying a watch a smart move for
+                potential returns?
+              </p>
+              <span class="icon">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+              <p>
+                While not every watch is a financial investment, a select few
+                can be. It requires careful research and knowledge of the
+                market. Buying a watch for its potential returns should be
+                approached with the same diligence as any other investment. It's
+                often wiser to buy a watch for personal enjoyment first, with
+                any appreciation in value being a bonus.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-title">
+              <p>
+                Do certain watches hold their value or even increase it over
+                time, like other investments?
+              </p>
+              <span class="icon">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+              <p>
+                Yes, watches with a strong brand heritage, iconic design, and
+                high demand often hold their value well. Limited editions,
+                discontinued models, and watches with a significant history or
+                provenance are also more likely to see an increase in value.
+                These watches are often seen as "blue chip" assets in the watch
+                world.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-title">
+              <p>
+                What is the investment potential of luxury or collectible
+                watches?
+              </p>
+              <span class="icon">&#9660;</span>
+            </div>
+            <div class="accordion-content">
+              <p>
+                The investment potential for luxury and collectible watches is
+                often tied to their rarity and brand prestige. Unlike
+                mass-produced watches, these are often produced in limited
+                numbers, which creates scarcity and drives up value. They can
+                offer a unique alternative investment, though it's important to
+                be aware of market fluctuations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <div class="footer-logo">
+              <h3>LUXWATCH</h3>
+            </div>
+            <div class="contact-info">
+              <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+              <p><i class="fas fa-envelope"></i> info@luxwatch.com</p>
+              <p><i class="fas fa-globe"></i> www.luxwatch.com</p>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Our Services</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="#mens">Men's Watches</a></li>
+              <li><a href="#collections">Collections</a></li>
+              <li><a href="#womens">Women's Watches</a></li>
+              <li><a href="#collections">Collections</a></li>
+              <li><a href="#new">New Arrivals</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 All rights reserved. Designed for you.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const accordionItems = document.querySelectorAll(".accordion-item");
+
+        accordionItems.forEach((item) => {
+          const title = item.querySelector(".accordion-title");
+          title.addEventListener("click", () => {
+            // Toggle active class on the clicked item
+            item.classList.toggle("active");
+
+            // Optional: Close other open items
+            accordionItems.forEach((otherItem) => {
+              if (otherItem !== item) {
+                otherItem.classList.remove("active");
+              }
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

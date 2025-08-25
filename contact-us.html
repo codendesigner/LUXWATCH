@@ -3,15 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>contact</title>
+    <title>Contact Us</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        color: #333;
-      }
-
       .container {
         max-width: 1200px;
         margin: 0 auto;
@@ -29,6 +27,8 @@
       /* Contact Header Section */
       .contact-header {
         text-align: center;
+        background-color: #f5f5f5;
+        padding: 180px 0 60px;
       }
 
       .contact-header .contact-title {
@@ -107,7 +107,9 @@
         font-size: 1em;
         border-radius: 5px;
       }
-
+      section.contact-form-section button {
+        width: 100%;
+      }
       /* Map Section */
       .map-section {
         padding: 0;
@@ -120,6 +122,16 @@
       }
 
       /* Contact Info Section */
+      section.contact-info i {
+        color: #988a6b;
+        font-size: 28px;
+        margin-bottom: 15px;
+      }
+
+      section.contact-info .info-item:nth-child(2) {
+        border-right: 1px solid #999;
+        border-left: 1px solid #999;
+      }
       .contact-info .container {
         display: flex;
         justify-content: space-between;
@@ -144,11 +156,47 @@
     </style>
   </head>
   <body>
+    <!-- Header  -->
+    <header class="header">
+      <div class="container">
+        <div class="nav-wrapper">
+          <div class="logo">
+            <img src="lux-watch-assets/luxwatch-logo.png" alt="Logo" />
+          </div>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="collection.html">PRODUCTS</a></li>
+              <li class="dropdown">
+                <a href="#pages">PAGES <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#cart">Cart</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="#blog">Blog</a></li>
+                  <li><a href="#faq">Faq Page</a></li>
+                  <li><a href="#contact">Contact Us</a></li>
+                </ul>
+              </li>
+              <li><a href="#blog">BLOG</a></li>
+              <li><a href="#about">ABOUT</a></li>
+              <li><a href="#contact">CONTACT</a></li>
+            </ul>
+          </nav>
+          <div class="nav-icons">
+            <a href="#search"><i class="fas fa-search"></i></a>
+            <a href="#account"><i class="fas fa-user"></i></a>
+            <a href="#cart"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#wishlist"><i class="fas fa-heart"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
     <section class="contact-header">
       <div class="container">
         <div class="contact-title">
           <p>Contact Us</p>
-          <p>Home / Contact Us</p>
+          <p>Home /<span> Contact Us</span></p>
         </div>
       </div>
     </section>
@@ -156,10 +204,7 @@
     <section class="contact-form-section">
       <div class="container">
         <div class="form-image">
-          <img
-            src="lux-watch-assets/contact-1.png"
-            alt="Man wearing a watch"
-          />
+          <img src="lux-watch-assets/contact-1.png" alt="Man wearing a watch" />
         </div>
         <div class="form-content">
           <h2>GET A QUOTE FOR YOUR PROJECT</h2>
@@ -185,7 +230,7 @@
                 required
               ></textarea>
             </div>
-            <button type="submit">SEND EMAIL</button>
+            <button class="btn-primary" type="submit">SEND EMAIL</button>
           </form>
         </div>
       </div>
@@ -204,21 +249,73 @@
     <section class="contact-info">
       <div class="container">
         <div class="info-item">
+          <i class="fas fa-phone"></i>
           <h3>TALK TO US</h3>
           <p>Toll Free +0 (123) 000-0000</p>
           <p>Fax:1234.000.000</p>
         </div>
         <div class="info-item">
+          <i class="fas fa-envelope"></i>
           <h3>MAIL US @</h3>
           <p>admin@luxwatch.com</p>
           <p>support@luxwatch.com</p>
         </div>
         <div class="info-item">
+          <i class="fa-solid fa-location-dot"></i>
           <h3>OUR LOCATION</h3>
           <p>123, David Blake Road,</p>
           <p>LA (City), 10000, USA</p>
         </div>
       </div>
     </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <div class="footer-logo">
+              <h3>LUXWATCH</h3>
+            </div>
+            <div class="contact-info">
+              <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+              <p><i class="fas fa-envelope"></i> info@luxwatch.com</p>
+              <p><i class="fas fa-globe"></i> www.luxwatch.com</p>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Our Services</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="#mens">Men's Watches</a></li>
+              <li><a href="#collections">Collections</a></li>
+              <li><a href="#womens">Women's Watches</a></li>
+              <li><a href="#collections">Collections</a></li>
+              <li><a href="#new">New Arrivals</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 All rights reserved. Designed for you.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

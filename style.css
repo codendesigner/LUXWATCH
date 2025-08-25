@@ -202,14 +202,17 @@ body {
 .btn-primary {
   background: transparent;
   color: #333;
-  border: 1px solid #333 !important;
+  /* border: 1px solid #333 !important; */
   border: none;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
-  background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+  /* background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%); */
+  background: #fff;
+  color: #988a6b;
+  transition: 0.4s;
 }
 
 .btn-secondary {
@@ -660,7 +663,7 @@ body {
   padding-left: 30px;
 }
 
-.kerrie-content button {
+button.btn-primary {
   color: #fff;
   background: #988a6b;
 }
@@ -833,14 +836,15 @@ body {
   margin-bottom: 1rem;
 }
 
-.contact-info p {
+.footer .contact-info p {
   margin-bottom: 0.5rem;
   opacity: 0.8;
+  color: #fff;
 }
 
-.contact-info i {
+.footer .contact-info i {
   margin-right: 0.5rem;
-  color: #d4af37;
+  color: #fff;
 }
 
 .footer-column h4 {
@@ -891,10 +895,22 @@ body {
   opacity: 0.8;
 }
 
+.footer .contact-info p:nth-child(2) {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 5px 0;
+}
+
 /* Collection/Product page CSS  */
 
 .collection-banner {
   background: url(lux-watch-assets/collection-banner.jpg);
+  padding: 180px 0 60px;
+  text-align: center;
+  color: #fff;
+  background-position:center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .collection-page {
   display: grid;
