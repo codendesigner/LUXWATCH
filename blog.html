@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Blog Header */
+      .blog-header {
+        text-align: center;
+        padding: 40px 0;
+        text-align: center;
+        padding: 60px 0;
+        background-color: #f5f5f5;
+      }
+      .blog-header h1 {
+        font-size: 3em;
+        font-weight: 300;
+        margin: 10px 0;
+      }
+
+      .blog-header p span {
+        font-weight: bold;
+        color: #000;
+      }
+      /* .blog-header .blog-title p:first-child {
+        font-size: 2em;
+        font-weight: 300;
+        margin-bottom: 5px;
+      }
+
+      .blog-header .blog-title p:last-child {
+        font-size: 0.9em;
+        color: #777;
+      } */
+
+      /* Blog Content Layout (main and sidebar) */
+      section.blog-content {
+        padding: 60px 0;
+      }
+      .blog-content .blog-container {
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+      }
+
+      /* Sidebar Styling */
+      .blog-sidebar {
+        width: 300px;
+        flex-shrink: 0;
+      }
+
+      .sidebar-block {
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 1px solid #eee;
+      }
+
+      .sidebar-block h4 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+      }
+
+      /* Products in Sidebar */
+      .product-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .product-list li {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .product-list img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      .product-list .price {
+        font-weight: bold;
+        color: #a08c73;
+        margin: 0;
+      }
+
+      .product-list .price span {
+        text-decoration: line-through;
+        color: #999;
+        font-weight: normal;
+        margin-left: 5px;
+      }
+
+      /* Blog Archive */
+      .blog-archive ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .blog-archive ul a {
+        text-decoration: none;
+        color: #555;
+        display: block;
+        padding: 5px 0;
+      }
+
+      /* Tags */
+      .tags-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .tags-list span {
+        background-color: #eee;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 0.8em;
+      }
+
+      /* Hot Deals */
+      .hot-deals img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 15px;
+      }
+
+      .hot-deals p {
+        text-align: center;
+        margin: 0;
+      }
+
+      .hot-deals .price {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #a08c73;
+      }
+
+      /* Blog Posts Styling (2-column grid) */
+      .blog-posts {
+        flex-grow: 1;
+      }
+
+      .post-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .blog-post {
+        background-color: #fff;
+        border: 1px solid #eee;
+      }
+
+      .blog-post .post-image-container {
+        width: 100%;
+      }
+
+      .blog-post img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .blog-post .post-content {
+        padding: 20px;
+      }
+
+      .post-meta {
+        color: #999;
+        font-size: 0.9em;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+
+      .post-content h3 {
+        font-size: 1.5em;
+        font-weight: 300;
+        margin-top: 0;
+      }
+
+      .post-content p {
+        line-height: 1.6;
+      }
+
+      .read-more {
+        display: inline-block;
+        background-color: #a08c73;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        margin-top: 15px;
+      }
+
+      /* Pagination */
+      .pagination {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+      }
+
+      .page-numbers a {
+        text-decoration: none;
+        color: #555;
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        margin: 0 5px;
+      }
+
+      .page-numbers a.active {
+        background-color: #a08c73;
+        color: #fff;
+        border-color: #a08c73;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="blog-header">
+      <div class="container">
+        <div class="blog-title">
+          <h1>Blog</h1>
+          <p>Home / <span>Blog</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-content">
+      <div class="container blog-container">
+        <aside class="blog-sidebar">
+          <div class="sidebar-block products">
+            <h4>Products</h4>
+            <ul class="product-list">
+              <li>
+                <img
+                  src="lux-watch-assets/blog-7.png"
+                  alt="Product Image"
+                />
+                <div>
+                  <p>Crafted For Lasting</p>
+                  <p class="price">$15.00 <span>$18.00</span></p>
+                </div>
+              </li>
+              <li>
+                <img
+                  src="lux-watch-assets/blog-7.png"
+                  alt="Product Image"
+                />
+                <div>
+                  <p>Crafted For Lasting</p>
+                  <p class="price">$15.00 <span>$18.00</span></p>
+                </div>
+              </li>
+              <li>
+                <img
+                  src="lux-watch-assets/blog-7.png"
+                  alt="Product Image"
+                />
+                <div>
+                  <p>Crafted For Lasting</p>
+                  <p class="price">$15.00 <span>$18.00</span></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar-block blog-archive">
+            <h4>Blog Archive</h4>
+            <ul>
+              <li><a href="#">October 2015 (1)</a></li>
+              <li><a href="#">April 2015 (5)</a></li>
+              <li><a href="#">March 2015 (1)</a></li>
+              <li><a href="#">June 2015 (6)</a></li>
+              <li><a href="#">October 2015 (9)</a></li>
+              <li><a href="#">September 2015 (6)</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-block tags">
+            <h4>Tags</h4>
+            <div class="tags-list">
+              <span>Altimus Watches</span>
+              <span>Apple Watch</span>
+              <span>Angelus Timepieces</span>
+              <span>Analog Watches</span>
+              <span>Armo Watches</span>
+              <span>Bulova Watch</span>
+              <span>Watch Basel</span>
+              <span>Bvlgari Watch</span>
+              <span>Case Ring</span>
+              <span>Celcius Timep..</span>
+              <span>Chiming Clocks..</span>
+            </div>
+          </div>
+
+          <div class="sidebar-block hot-deals">
+            <h4>Hot Deals</h4>
+            <img
+              src="lux-watch-assets/blog-8.png"
+              alt="Hot Deal Product"
+            />
+            <p>Signature Timepiece</p>
+            <p class="price">$15.00</p>
+          </div>
+        </aside>
+
+        <main class="blog-posts">
+          <div class="post-grid">
+            <div class="blog-post">
+              <div class="post-image-container">
+                <img
+                  src="lux-watch-assets/blog-1.png"
+                  alt="Blog post image"
+                />
+              </div>
+              <div class="post-content">
+                <p class="post-meta">
+                  <span>Post by: Admin</span
+                  ><span class="date">Feb 02, 2016</span>
+                </p>
+                <h3>From The Lens: Blog Post</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                  incididunt ut labore et dolore magna aliqua.
+                </p>
+                <a href="#" class="read-more">Read More</a>
+              </div>
+            </div>
+
+            <div class="blog-post">
+              <div class="post-image-container">
+                <img
+                  src="lux-watch-assets/blog-2.png"
+                  alt="Blog post image"
+                />
+              </div>
+              <div class="post-content">
+                <p class="post-meta">
+                  <span>Post by: Admin</span
+                  ><span class="date">Feb 02, 2016</span>
+                </p>
+                <h3>Image Showcase: Blog Article</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                  incididunt ut labore et dolore magna aliqua.
+                </p>
+                <a href="#" class="read-more">Read More</a>
+              </div>
+            </div>
+
+            <div class="blog-post">
+              <div class="post-image-container">
+                <img
+                  src="lux-watch-assets/blog-3.png"
+                  alt="Blog post image"
+                />
+              </div>
+              <div class="post-content">
+                <p class="post-meta">
+                  <span>Post by: Admin</span
+                  ><span class="date">Feb 02, 2016</span>
+                </p>
+                <h3>From The Archive: Blog Entry</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                  incididunt ut labore et dolore magna aliqua.
+                </p>
+                <a href="#" class="read-more">Read More</a>
+              </div>
+            </div>
+
+            <div class="blog-post">
+              <div class="post-image-container">
+                <img
+                  src="lux-watch-assets/blog-4.png"
+                  alt="Blog post image"
+                />
+              </div>
+              <div class="post-content">
+                <p class="post-meta">
+                  <span>Post by: Admin</span
+                  ><span class="date">Feb 02, 2016</span>
+                </p>
+                <h3>Trends & Insights: Blog</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                  incididunt ut labore et dolore magna aliqua.
+                </p>
+                <a href="#" class="read-more">Read More</a>
+              </div>
+            </div>
+
+            <div class="blog-post">
+              <div class="post-image-container">
+                <img
+                  src="lux-watch-assets/blog-5.png"
+                  alt="Blog post image"
+                />
+              </div>
+              <div class="post-content">
+                <p class="post-meta">
+                  <span>Post by: Admin</span
+                  ><span class="date">Feb 02, 2016</span>
+                </p>
+                <h3>A Picture Speaks: Blog Post</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                  incididunt ut labore et dolore magna aliqua.
+                </p>
+                <a href="#" class="read-more">Read More</a>
+              </div>
+            </div>
+
+            <div class="blog-post">
+              <div class="post-image-container">
+                <img
+                  src="lux-watch-assets/blog-6.png"
+                  alt="Blog post image"
+                />
+              </div>
+              <div class="post-content">
+                <p class="post-meta">
+                  <span>Post by: Admin</span
+                  ><span class="date">Feb 02, 2016</span>
+                </p>
+                <h3>Blog Post with Image Highlight</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                  incididunt ut labore et dolore magna aliqua.
+                </p>
+                <a href="#" class="read-more">Read More</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pagination">
+            <p>Showing 1 to 6 of 6 (2 Pages)</p>
+            <div class="page-numbers">
+              <a href="#" class="active">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">&gt;</a>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+  </body>
+</html>

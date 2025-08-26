@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Cart Header */
+    .cart-header {
+      text-align: center;
+      padding: 40px 0;
+      background-color: #f5f5f5;
+    }
+
+    .cart-header .cart-title p:first-child {
+      font-size: 2em;
+      font-weight: 300;
+      margin-bottom: 5px;
+    }
+
+    .cart-header .cart-title p:last-child {
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    /* Cart Section Layout */
+    .cart-section .cart-container {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .cart-table-wrapper {
+      flex: 3;
+    }
+
+    .cart-totals {
+      flex: 1;
+    }
+
+    /* Cart Table Styling */
+    .cart-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .cart-table thead tr {
+      background-color: #ddd;
+    }
+
+    .cart-table th {
+      text-align: left;
+      padding: 15px;
+      font-weight: bold;
+    }
+
+    .cart-table td {
+      padding: 15px;
+      border-top: 1px solid #eee;
+    }
+
+    .product-image-col {
+      width: 10%;
+    }
+    .product-name-col {
+      width: 40%;
+    }
+    .product-price-col {
+      width: 20%;
+    }
+    .product-quantity-col {
+      width: 15%;
+    }
+    .product-remove-col {
+      width: 5%;
+      text-align: center;
+    }
+
+    .cart-table img {
+      width: 80px;
+      height: auto;
+    }
+
+    .cart-table input[type="number"] {
+      width: 50px;
+      padding: 5px;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+
+    .cart-table a {
+      text-decoration: none;
+      color: #999;
+      font-weight: bold;
+    }
+
+    /* Cart Actions (Coupon) */
+    .cart-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .coupon-form input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
+    }
+
+    .coupon-form button {
+      background-color: #a08c73;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    /* Cart Totals Section */
+    .cart-totals {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+
+    .cart-totals h3 {
+      font-size: 1.2em;
+      font-weight: 300;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+
+    .totals-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+
+    .totals-row span {
+      font-weight: 600;
+    }
+
+    .total {
+      border-top: 1px solid #eee;
+      font-size: 1.2em;
+    }
+
+    .checkout-button {
+      background-color: #a08c73;
+      color: #fff;
+      border: none;
+      width: 100%;
+      padding: 15px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+  <body>
+    <section class="cart-header">
+      <div class="container">
+        <div class="cart-title">
+          <p>Cart</p>
+          <p>Home / Cart</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cart-section">
+      <div class="container cart-container">
+        <div class="cart-table-wrapper">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th class="product-image-col">Images</th>
+                <th class="product-name-col">Product</th>
+                <th class="product-price-col">Price</th>
+                <th class="product-quantity-col">Quantity</th>
+                <th class="product-remove-col">Remove</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <img
+                    src="lux-watch-assets/cart-1.png"
+                    alt="Product 1"
+                  />
+                </td>
+                <td>Meticulously Made, Strikingly Designed</td>
+                <td>$295.00</td>
+                <td>
+                  <input type="number" value="1" min="1" />
+                </td>
+                <td><a href="#">x</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="lux-watch-assets/cart-2.png"
+                    alt="Product 2"
+                  />
+                </td>
+                <td>Perfected Craftsmanship, Unforgettable Impact</td>
+                <td>$275.00</td>
+                <td>
+                  <input type="number" value="1" min="1" />
+                </td>
+                <td><a href="#">x</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="lux-watch-assets/cart-3.png"
+                    alt="Product 3"
+                  />
+                </td>
+                <td>Engineered For Excellence, Styled To Captivate</td>
+                <td>$295.00</td>
+                <td>
+                  <input type="number" value="1" min="1" />
+                </td>
+                <td><a href="#">x</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="cart-actions">
+            <div class="coupon-form">
+              <input type="text" placeholder="Coupon Code" />
+              <button>Update Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="cart-totals">
+          <h3>CART TOTALS</h3>
+          <div class="totals-row">
+            <span>Subtotal</span>
+            <span>$15.00</span>
+          </div>
+          <div class="totals-row total">
+            <span>Total</span>
+            <span>$15.00</span>
+          </div>
+          <button class="checkout-button">PROCEED TO CHECKOUT</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

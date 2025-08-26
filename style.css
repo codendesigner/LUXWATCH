@@ -1020,7 +1020,7 @@ button.btn-primary {
   gap: 24px;
 }
 
-.product-card {
+.collection-page .product-card {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
@@ -1031,28 +1031,28 @@ button.btn-primary {
   transition: box-shadow 0.2s;
 }
 
-.product-card:hover {
+.collection-page .product-card:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
-.product-card img {
+.collection-page .product-card img {
   width: 120px;
   height: 120px;
   object-fit: contain;
   margin-bottom: 16px;
 }
 
-.product-info {
+.collection-page .product-info {
   text-align: center;
 }
 
-.product-info h3 {
+.collection-page .product-info h3 {
   font-size: 1.1rem;
   margin: 0 0 8px 0;
   font-weight: 500;
 }
 
-.price {
+.collection-page .price {
   color: #b48b57;
   font-weight: bold;
   font-size: 1rem;
